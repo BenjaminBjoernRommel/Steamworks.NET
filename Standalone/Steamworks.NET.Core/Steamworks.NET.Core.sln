@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steamworks.NET.Core", "Steamworks.NET.Core.csproj", "{015400CB-FB09-40FA-B62E-C0C5D92EC7B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "..\TestConsoleApp\TestConsoleApp.csproj", "{7B46A797-9297-4309-8EC4-D6725D584C34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{015400CB-FB09-40FA-B62E-C0C5D92EC7B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015400CB-FB09-40FA-B62E-C0C5D92EC7B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015400CB-FB09-40FA-B62E-C0C5D92EC7B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015400CB-FB09-40FA-B62E-C0C5D92EC7B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B46A797-9297-4309-8EC4-D6725D584C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B46A797-9297-4309-8EC4-D6725D584C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B46A797-9297-4309-8EC4-D6725D584C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B46A797-9297-4309-8EC4-D6725D584C34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED5DCE78-495A-42F1-9319-42570BEC96C5}
+	EndGlobalSection
+EndGlobal
