@@ -9,6 +9,11 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;STEAMWORKS_WIN;STEAMWORKS_X86</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\..\com.rlabrecque.steamworks.net\Runtime\autogen\isteamapplist.cs" Link="Steamworks.NET\autogen\isteamapplist.cs" />
     <Compile Include="..\..\com.rlabrecque.steamworks.net\Runtime\autogen\isteamapps.cs" Link="Steamworks.NET\autogen\isteamapps.cs" />

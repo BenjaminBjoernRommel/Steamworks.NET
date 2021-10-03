@@ -19,7 +19,8 @@ namespace TestConsoleApp
             var userId = SteamUser.GetSteamID();
             var userName = SteamFriends.GetPersonaName();
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine($"userId = {userId}");
+            Console.WriteLine($"userName = {userName}");
         }
     }
 }
