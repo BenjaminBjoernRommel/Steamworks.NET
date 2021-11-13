@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -13,13 +13,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;STEAMWORKS_WIN;STEAMWORKS_X86</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
+    <DefineConstants>TRACE;STEAMWORKS_WIN</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;STEAMWORKS_WIN;STEAMWORKS_X86</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
+    <DefineConstants>TRACE;STEAMWORKS_WIN</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -127,6 +127,15 @@
     <Compile Include="..\..\com.rlabrecque.steamworks.net\Runtime\types\SteamUserStats\SteamLeaderboard_t.cs" Link="Steamworks.NET\types\SteamUserStats\SteamLeaderboard_t.cs" />
     <Compile Include="..\..\com.rlabrecque.steamworks.net\Runtime\types\Steam_api_common\HSteamPipe.cs" Link="Steamworks.NET\types\SteamClient\HSteamPipe.cs" />
     <Compile Include="..\..\com.rlabrecque.steamworks.net\Runtime\types\Steam_api_common\HSteamUser.cs" Link="Steamworks.NET\types\SteamClient\HSteamUser.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="x64\steam_api.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="x86\steam_api.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
