@@ -204,26 +204,36 @@ namespace Steamworks {
 
 		public bool IsValid() {
 			if (GetEAccountType() <= EAccountType.k_EAccountTypeInvalid || GetEAccountType() >= EAccountType.k_EAccountTypeMax)
-				return false;
+            {
+                return false;
+            }
 
-			if (GetEUniverse() <= EUniverse.k_EUniverseInvalid || GetEUniverse() >= EUniverse.k_EUniverseMax)
-				return false;
+            if (GetEUniverse() <= EUniverse.k_EUniverseInvalid || GetEUniverse() >= EUniverse.k_EUniverseMax)
+            {
+                return false;
+            }
 
-			if (GetEAccountType() == EAccountType.k_EAccountTypeIndividual) {
+            if (GetEAccountType() == EAccountType.k_EAccountTypeIndividual) {
 				if (GetAccountID() == new AccountID_t(0) || GetUnAccountInstance() > Constants.k_unSteamUserDefaultInstance)
-					return false;
-			}
+                {
+                    return false;
+                }
+            }
 
 			if (GetEAccountType() == EAccountType.k_EAccountTypeClan) {
 				if (GetAccountID() == new AccountID_t(0) || GetUnAccountInstance() != 0)
-					return false;
-			}
+                {
+                    return false;
+                }
+            }
 
 			if (GetEAccountType() == EAccountType.k_EAccountTypeGameServer) {
 				if (GetAccountID() == new AccountID_t(0))
-					return false;
-				// Any limit on instances?  We use them for local users and bots
-			}
+                {
+                    return false;
+                }
+                // Any limit on instances?  We use them for local users and bots
+            }
 			return true;
 		}
 

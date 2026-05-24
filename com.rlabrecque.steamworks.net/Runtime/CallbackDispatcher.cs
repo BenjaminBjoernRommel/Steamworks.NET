@@ -108,8 +108,10 @@ namespace Steamworks {
 				if (callbacksRegistry.TryGetValue(iCallback, out callbacksList)) {
 					callbacksList.Remove(cb);
 					if (callbacksList.Count == 0)
-						callbacksRegistry.Remove(iCallback);
-				}
+                    {
+                        callbacksRegistry.Remove(iCallback);
+                    }
+                }
 			}
 		}
 
@@ -119,8 +121,10 @@ namespace Steamworks {
 				if (m_registeredCallResults.TryGetValue((ulong)asyncCall, out callResultsList)) {
 					callResultsList.Remove(cr);
 					if (callResultsList.Count == 0)
-						m_registeredCallResults.Remove((ulong)asyncCall);
-				}
+                    {
+                        m_registeredCallResults.Remove((ulong)asyncCall);
+                    }
+                }
 			}
 		}
 
@@ -154,9 +158,12 @@ namespace Steamworks {
 		}
 
 		internal static void RunFrame(bool isGameServer) {
-			if (!IsInitialized) throw new InvalidOperationException("Callback dispatcher is not initialized.");
+			if (!IsInitialized)
+            {
+                throw new InvalidOperationException("Callback dispatcher is not initialized.");
+            }
 
-			HSteamPipe hSteamPipe = (HSteamPipe)(isGameServer ? NativeMethods.SteamGameServer_GetHSteamPipe() : NativeMethods.SteamAPI_GetHSteamPipe());
+            HSteamPipe hSteamPipe = (HSteamPipe)(isGameServer ? NativeMethods.SteamGameServer_GetHSteamPipe() : NativeMethods.SteamAPI_GetHSteamPipe());
 			NativeMethods.SteamAPI_ManualDispatch_RunFrame(hSteamPipe);
 			var callbacksRegistry = isGameServer ? m_registeredGameServerCallbacks : m_registeredCallbacks;
 			while (NativeMethods.SteamAPI_ManualDispatch_GetNextCallback(hSteamPipe, m_pCallbackMsg)) {
@@ -252,9 +259,11 @@ namespace Steamworks {
 			GC.SuppressFinalize(this);
 
 			if (m_bIsRegistered)
-				Unregister();
+            {
+                Unregister();
+            }
 
-			m_bDisposed = true;
+            m_bDisposed = true;
 		}
 
 		// Manual registration of the callback
@@ -372,8 +381,10 @@ namespace Steamworks {
 
 		public void Cancel() {
 			if (IsActive())
-				CallbackDispatcher.Unregister(m_hAPICall, this);
-		}
+            {
+                CallbackDispatcher.Unregister(m_hAPICall, this);
+            }
+        }
 
 		internal override Type GetCallbackType() {
 			return typeof(T);

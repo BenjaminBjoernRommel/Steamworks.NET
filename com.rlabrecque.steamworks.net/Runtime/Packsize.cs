@@ -50,12 +50,14 @@ namespace Steamworks {
 			int subscribedFilesSize = Marshal.SizeOf(typeof(RemoteStorageEnumerateUserSubscribedFilesResult_t));
 #if VALVE_CALLBACK_PACK_LARGE
 			if (sentinelSize != 32 || subscribedFilesSize != (1 + 1 + 1 + 50 + 100) * 4 + 4)
-				return false;
+            {
+                return false;
+            }
 #elif VALVE_CALLBACK_PACK_SMALL
 			if (sentinelSize != 24 || subscribedFilesSize != (1 + 1 + 1 + 50 + 100) * 4)
 				return false;
 #endif
-			return true;
+            return true;
 		}
 
 		[StructLayout(LayoutKind.Sequential, Pack = Packsize.value)]
